@@ -61,8 +61,6 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
     _onLostTimeout = 5.0;
     _tlmCache = [NSMutableDictionary dictionary];
     _beaconOperationsQueue = dispatch_queue_create(kBeaconsOperationQueueName, NULL);
-    _centralManager = [[CBCentralManager alloc] initWithDelegate:self
-                                                           queue:_beaconOperationsQueue];
   }
 
   return self;
