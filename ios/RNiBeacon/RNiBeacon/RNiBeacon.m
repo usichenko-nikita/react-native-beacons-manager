@@ -40,12 +40,18 @@ RCT_EXPORT_MODULE()
     self.locationManager.delegate = self;
     self.locationManager.pausesLocationUpdatesAutomatically = NO;
     self.dropEmptyRanges = NO;
-      
-    self.eddyStoneScanner = [[ESSBeaconScanner alloc] init];
-    self.eddyStoneScanner.delegate = self;
+     
   }
 
   return self;
+}
+
+- (ESSBeaconScanner *)eddyStoneScanner {
+    if (!_eddyStoneScanner) {
+        _eddyStoneScanner = [[ESSBeaconScanner alloc] init];
+        _eddyStoneScanner.delegate = self;
+    }
+    return _eddyStoneScanner;
 }
 
 - (NSArray<NSString *> *)supportedEvents
