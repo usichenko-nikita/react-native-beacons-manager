@@ -20,6 +20,10 @@ declare module 'react-native-beacons-manager' {
     ///////////////////////////////////////////////////////
 
     requestAlwaysAuthorization(): void;
+    
+    allowsBackgroundLocationUpdates(
+      allow: boolean
+    ): void;
 
     requestWhenInUseAuthorization(): void;
 
